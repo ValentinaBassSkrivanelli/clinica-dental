@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-porcelana font-sans text-grafito antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #b04a5e;
+    outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: #f6f7f5;
+  }
+
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  /* Quita el triángulo por defecto de <details> en todos los navegadores */
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
